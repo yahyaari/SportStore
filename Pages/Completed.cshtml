@@ -1,0 +1,28 @@
+﻿@page
+    <style>
+        body {
+            margin: 0; /* Sayfa kenar boşluklarını sıfırla */
+            height: 100vh; /* Sayfa yüksekliğini tam ekran yap */
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to bottom right, #00a1ff, #00ff72); /* Çarpraz gradient renk geçişi */
+            color: #fff; /* Yazı rengi */
+        }
+
+
+        /* #00a1ff, #00ff72 */
+        /* Diğer stillendirmeler buraya eklenir */
+    </style>
+
+    <div class="text-center">
+        <h2 style="color: black;">Thanks!</h2>
+        <p style="color: black;">Thanks for placing order #@OrderId</p>
+        <p style="color: black;">We'll ship your goods as soon as possible.</p>
+        <a class="btn btn-primary" asp-controller="Home">Return to Store</a>
+    </div>
+
+@functions {
+
+    [BindProperty(SupportsGet = true)]
+    public string OrderId { get; set; }
+}
